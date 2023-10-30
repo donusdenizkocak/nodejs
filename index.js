@@ -1,22 +1,31 @@
-//request - respons   talep-cevap  => server
 
-//http server oluşturuyoruz
+const express = require("express")
+const app =express();
 
-var http = require("http")  //node modüles => http, fs, os
-var fs =require("fs");
+app.set("view engine","ejs")
 
-var server =http.createServer((req,res) =>{
 
-    if(req.url=="/"){
-        res.write("<h1>anasayfa</h1> ")
-    }else if(req.url == "/urunler"){
-        res.write("<h1>ürünler</h1> ")
-    }else{
-        res.write("sayfa bulunamadı ")
-    }
-    res.end();  //cevap göndermezsek tarayıcı işlev göstermez sürekli yeniliyor modunda olur res=response cevap demek. servere durdurmuş oldun
+const data =[
+    {id:1,name:"iphone 14",price:30000},
+    {id:2,name:"iphone 15",price:35000},
+    {id:3,name:"iphone 16",price:40000}
+]
+
+//!routes yapısı
+app.use("/products/:id", function(req,res) {
+    res.render("product-details")
 })
 
-server.listen(3000, ()=>{
-    console.log("node.js server at port 3000")
-});
+app.use("/products", function(req,res) {
+    res.render("products", {
+        urunler:data
+    })
+})
+
+app.use("/", function(req,res) {
+    res.render("index")
+})
+
+app.listen(3000, ()=>{
+    console.log("listening on port 3000")
+})
