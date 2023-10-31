@@ -6,6 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-   <h1>ürün deyay</h1> 
+   <h1>ürün detay</h1> 
+   <h2><%= name %></h2>
+   <%= price %></p>
+   <p><% if (isActive) { %>
+       <span>urun satışta</span>
+   <% }else{ %>
+    <span>urun stokta yok</span>
+<% } %></p>
 </body>
 </html>

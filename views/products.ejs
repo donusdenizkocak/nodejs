@@ -18,7 +18,10 @@
   <ul>
     <% urunler.forEach(urun => { %>
       <% if (urun.price >= 40000 && urun.isActive) { %>
-        <li><%= urun.name %> - <%= urun.price %></li>
+        <a href="/products/<%= urun.id %>"> 
+          <li><%= urun.name %> - <%= urun.price %></li>
+        </a>
+       
       <% } %>
     <% }) %>
   </ul>
