@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap/dist/bootstrap.min.css">  <!--kullanmak için linkle yol belirtiyoruz -->
     <title>Document</title>
 </head>
 <body>
@@ -25,6 +26,33 @@
       <% } %>
     <% }) %>
   </ul>
+<h2 class="m-5">card yapısı</h2>
+  <div class="container">
+    <div class="row">
+        <div class="col-12">
+            <% urunler.forEach(urun => { %>
+              <div class="card mb-3">
+                <div class="row">
+                    <div class="col-4">
+                        <img src="/images/<%= urun.imageUrl %>" alt="resim" width="200" class="img-fluid"></br>
+                    </div>
+                    <div class="col-8">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= urun.name %></h5>
+                            <p class="card-text"> <%= urun.price %></p>
+                            <p><% if (urun.isActive) { %>
+                                <span>urun satışta</span>
+                            <% }else{ %>
+                             <span>urun stokta yok</span>
+                         <% } %></p>
+                          </div>
+                    </div>
+                </div>
+            </div>
+            <% }) %>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>

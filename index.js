@@ -3,7 +3,9 @@ const express = require("express");
 const app =express();
 
 app.set("view engine","ejs");
-app.use(express.static('public'));
+app.use(express.static('public'));  //images klasörü statik yapıda oldugu için kullanmak için dışarı açmak gerekiyor
+app.use(express.static('node_modules'));  //bootstrap kurdugumuzda kullanmak için içinde oldugu node_modulesi dışarı açmak gerekiyor
+
 
 
 const data =[
