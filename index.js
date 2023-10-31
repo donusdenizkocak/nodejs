@@ -1,15 +1,16 @@
 
-const express = require("express")
+const express = require("express");
 const app =express();
 
-app.set("view engine","ejs")
+app.set("view engine","ejs");
+app.use(express.static('public'));
 
 
 const data =[
-    {id:1,name:"iphone 14",price:30000, isActive:true},
-    {id:2,name:"iphone 15",price:45000, isActive:true},
-    {id:3,name:"iphone 16",price:40000, isActive:false},
-    {id:3,name:"iphone 16",price:44000, isActive:true}
+    {id:1,name:"iphone 14",price:30000, isActive:true,imageUrl:"1.jpg"},
+    {id:2,name:"iphone 15",price:45000, isActive:true,imageUrl:"2.jpg"},
+    {id:3,name:"iphone 16",price:40000, isActive:false,imageUrl:"3.jpg"},
+    {id:3,name:"iphone 16",price:44000, isActive:true,imageUrl:"1.jpg"}
 ];
 
 //!routes yapısı
