@@ -9,7 +9,7 @@ const data =[
     {id:1,name:"iphone 14",price:30000},
     {id:2,name:"iphone 15",price:35000},
     {id:3,name:"iphone 16",price:40000}
-]
+];
 
 //!routes yapısı
 app.use("/products/:id", function(req,res) {
@@ -18,9 +18,9 @@ app.use("/products/:id", function(req,res) {
 
 app.use("/products", function(req,res) {
     res.render("products", {
-        urunler:data
-    })
-})
+        urunler: data
+    });
+});
 
 app.use("/", function(req,res) {
     res.render("index")
