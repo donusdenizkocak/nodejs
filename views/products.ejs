@@ -15,5 +15,13 @@
     <%= urunler[0].price %>   <!--ejs ile  index.js aldıgım datayı kullandım -->
   </p>
 
+  <ul>
+    <% urunler.forEach(urun => { %>
+      <% if (urun.price >= 40000 && urun.isActive) { %>
+        <li><%= urun.name %> - <%= urun.price %></li>
+      <% } %>
+    <% }) %>
+  </ul>
+
 </body>
 </html>
