@@ -9,10 +9,10 @@ app.use(express.static('node_modules'));  //bootstrap kurdugumuzda kullanmak iç
 
 
 const data =[
-    {id:1,name:"iphone 14",price:30000, isActive:true,imageUrl:"1.jpg"},
-    {id:2,name:"iphone 15",price:45000, isActive:true,imageUrl:"2.jpg"},
-    {id:3,name:"iphone 16",price:40000, isActive:false,imageUrl:"3.jpg"},
-    {id:3,name:"iphone 16",price:44000, isActive:true,imageUrl:"1.jpg"}
+    {id:1,name:"iphone 14",price:30000, isActive:true,isHome:true,imageUrl:"1.jpg"},
+    {id:2,name:"iphone 15",price:45000, isActive:true,isHome:true,imageUrl:"2.jpg"},
+    {id:3,name:"iphone 16",price:40000, isActive:false,isHome:false,imageUrl:"3.jpg"},
+    {id:3,name:"iphone 16",price:44000, isActive:true,isHome:true,imageUrl:"1.jpg"}
 ];
 
 //!routes yapısı

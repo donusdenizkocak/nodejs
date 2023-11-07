@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <% urunler.forEach(urun => { %>
+             <% if (isHome) { %>
+                <div class="card mb-3">
+                    <div class="row">
+                        <div class="col-4">
+                            <img src="/images/<%= imageUrl %>" alt="resim" width="200" class="img-fluid"></br>
+                        </div>
+                        <div class="col-8">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                  <a href="/products/<%= id %>"></a>
+                                  <%= name %>
+                                </h5>
+                                <p class="card-text"> <%= price %></p>
+                                <p><% if (isActive) { %>
+                                    <span>urun satışta</span>
+                                <% }else{ %>
+                                 <span>urun stokta yok</span>
+                             <% } %></p>
+    
+                             <div>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis nisi qui impedit accusamus quaerat? Autem accusantium obcaecati, provident reiciendis velit eveniet. Porro facere et, blanditiis, impedit architecto consequatur dolorum, enim labore pariatur amet sed! Quos molestias blanditiis suscipit, sed totam, voluptatem deleniti eius quasi atque veritatis et distinctio. Quasi, quia.
+                             </div>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+             <% } %>
+
+            <% }) %>
+        </div>
+    </div>
+</div>
